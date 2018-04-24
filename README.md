@@ -15,5 +15,5 @@
     veis ​​por qualquer uso indevido ou danos causados ​​por este programa     
                                                                                
                                RavokTHC-420                                    
-
-![alt tag](https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg)
+                               
+![ScreenShot](https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg)
