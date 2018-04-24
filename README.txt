@@ -3,7 +3,8 @@
    | |   | __ | | (__  \__ \ / _| / _` | | ' \ 
    |_|   |_||_|  \___| |___/ \__| \__,_| |_||_|                                               
 
-    Aviso Legal: 					                                          			
+    Aviso Legal:
+    
     Uso do THCScan - Google Dork					                                    	
     para atacar alvos sem consentimento prévio mútuo é ilegal.			            
                                                                                
