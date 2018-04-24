@@ -5,7 +5,7 @@
 
     Aviso Legal:
     
-    Uso do THCScan - Google Dork					                                    	
+    Uso do THCScan - Google Dork
     para atacar alvos sem consentimento prévio mútuo é ilegal.			            
                                                                                
     É responsabilidade do usuário final obedecer a todas os Leis Locais, Estad-
