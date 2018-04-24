@@ -16,4 +16,4 @@
                                                                                
                                RavokTHC-420                                    
 
-![Alt Text](https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg)
+![alt tag](https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg)
