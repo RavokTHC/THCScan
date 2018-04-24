@@ -1,4 +1,3 @@
- <p align="center"> <img width="460" height="300" src="https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg"> </p> 
  
     Aviso Legal:
     
