@@ -1,5 +1,7 @@
-<p align="center"> <img width="460" height="300" src="https://image.ibb.co/gYko1x/Captura_de_tela_de_2018_04_24_19_15_04.png> </p> 
 
+<p align="center">
+  <img width="460" height="300" src="https://image.ibb.co/gYko1x/Captura_de_tela_de_2018_04_24_19_15_04.png">
+</p>
 
     Aviso Legal:
     
