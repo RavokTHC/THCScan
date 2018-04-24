@@ -1,8 +1,5 @@
-  _____   _  _    ___   ___                    
- |_   _| | || |  / __| / __|  __   __ _   _ _  
-   | |   | __ | | (__  \__ \ / _| / _` | | ' \ 
-   |_|   |_||_|  \___| |___/ \__| \__,_| |_||_|                                               
-
+ <p align="center"> <img width="460" height="300" src="https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg"> </p> 
+ 
     Aviso Legal:
     
     Uso do THCScan - Google Dork
@@ -16,4 +13,3 @@
                                                                                
                                RavokTHC-420                                    
                                
-![ScreenShot][Center](https://www.erbachay.com/wp-content/uploads/2017/01/Staff-Picks-3-300x300.jpg)
