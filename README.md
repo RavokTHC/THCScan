@@ -1,5 +1,7 @@
   +-----------------------------------------------------------------------------+
-    [!] Aviso Legal: 					                                          			
+
+
+    Aviso Legal: 					                                          			
     Uso do THCScan - Google Dork					                                    	
     para atacar alvos sem consentimento prévio mútuo é ilegal.			            
                                                                                
@@ -10,4 +12,5 @@
     veis ​​por qualquer uso indevido ou danos causados ​​por este programa     
                                                                                
                                RavokTHC-420                                    
+
   +-----------------------------------------------------------------------------+
