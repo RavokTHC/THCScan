@@ -9,7 +9,8 @@
 >para atacar alvos sem consentimento prévio mútuo é ilegal.			            
 >É responsabilidade do usuário final obedecer a todas os Leis Locais, Estaduais e Federais								                                             
 >Os desenvolvedores não assumem nenhuma responsabilidade e não são responsá-
-veis ​​por qualquer uso indevido ou danos causados ​​por este programa     
+veis 
+​​por qualquer uso indevido ou danos causados ​​por este programa     
                                                                            
                            RavokTHC-420
                           
