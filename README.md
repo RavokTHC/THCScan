@@ -43,9 +43,9 @@ Use um dos canais abaixo para entrar em Contato, relatar Bugs, ou contribuir com
 
 | Rede | Link de Contato |
 | ------ | ------ |
-| Telegram | [https://web.telegram.org/][PlDb] |
-| WhatsApp | [https://web.whatsapp.com/][PlGh] |
-| Discord | [https://discordapp.com/][PlGd] |
-| GitHub | [https://github.com/RavokTHC/][PlOd] |
+| Telegram | [https://web.telegram.org/] |
+| WhatsApp | [https://web.whatsapp.com/] |
+| Discord | [https://discordapp.com/] |
+| GitHub | [https://github.com/RavokTHC/] |
 
 ![test](http://betsaidamap.com/images/separador.png)
