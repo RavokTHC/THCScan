@@ -1,3 +1,4 @@
+![img](https://u-static.haozhaopian.net/assets/share/uid_736f844cb459474d9aec089ca052e16as/eb2de4b2-42c1-4cc2-8f9a-d0ffa089cac4.jpg)
 # THC Scanner ![test](https://cdn0.iconfinder.com/data/icons/smoking-1/512/Smoking_marijuana_bong_pipe-48.png)
 
 ***google dork scanner 0.4.2.0-1***
